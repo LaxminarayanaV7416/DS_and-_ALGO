@@ -1,0 +1,115 @@
+Containers
+----------
+1. Sequence Containers (array and LinkedList)
+    a. vector #include <vector> === Vector can grow from end only === vector<int> vec;
+        * vec.size() -> returns the number of elements that is size.
+        * vec.push_back(element) -> to add element at the end of vector.
+        * vec[index] -> to get element in index and doesnot throw any exception
+        * vec.at(index) -> same as above but throws exception when out of range.
+        ** for loop in vectors (slower version)
+        for(int i=0; i< vec.size(); i++){
+            cout << vec[i] << " ";
+        }
+        ** for loop universal way and (faster version)
+        for(vector<int>::iterator itr=vec.begin(); itr!=vec.end(); ++itr){
+            cout << *itr << " ";
+        }
+        ** for loop using auto same as above 
+        for(auto iter : vec){
+            cout << iter << " ";
+        }
+
+/* common memeber functions which can be applied for all containers */
+    => container.empty(); >>> to see whether container is empty or not
+    => container.size(); >>> return no of elements in container
+    => container_name<int> container_2(container); >>> will copy container to container_2
+    => container.clear(); >>> removes all elements in container
+    => container_2.swap(container); >>> now container_2 becomes container and vice versa.
+/* Properties of vector */
+    // 1. fast insert/remove at the end : O(1)
+    // 2. slow insert/remove at the begining or in the middle of vector : O(n)
+    // 3. slow search : O(n)
+
+    b. deque #include <deque> === Similar to vector but can grow from both end and begining === deque<int> deq;
+        * deq.push_back(element) -> to add element in the end
+        * deq.push_front(element) -> to add element in the front 
+        * deq[index] -> to get the element
+/* Properties of deque */
+    // 1. fast insert/remove at the end and begining: O(1)
+    // 2. slow insert/remove in the middle of vector : O(n)
+    // 3. slow search : O(n)
+
+    c. list #include <list> === it is the doubly LinkedList implementation === list<int> dll;
+    Note: we dont have random acces in linked list we need to use the pointers
+        * dll.push_back(element) -> to add element at the end;
+        * dll.push_front(element) -> to add element at the beginning
+        // we need to find the pointer pointing to element we can use find algorithms
+            list<int>:: iterator pointer = find(dll.begin(),dll.end(), element)
+        * dll.insert(pointer,element_2); -> to insert the element after the pointer
+        * pointer++ -> to map pointer to next location
+        * dll.erase(pointer) -> to remove the pointer pointing element from list
+        * dll.splice(pointer, dll_2, dll_2.begin(),dll_2.end()); -> when we want to slice a part of dll_2 and place in ddl
+            at pointer location and advabtage is it consumes O(1) time.
+
+/* Properties of list */
+    // 1. fast insert/delete at any place : O(1)
+    // 2. slow search: O(n)
+    // 3. no random access so we cannot use index based element search.
+
+
+    d. forward list #include <forward_list> === its is the single list implementation in c++ no back reference is present. === forward_list<int> sll;
+        * 
+    e. array #include <array> === its is wrapper around array so that we can have access to default methods of containers. === array<int> arr;
+        * 
+        
+2. Associative Containers (Binary Tree)
+    a. set #include <set>
+    b. mutliset #include <set>
+    c. map #include <map>
+    d. multimap #include <map>
+3. Unordered Containers (hash table)
+    a. Unordered set/ mutliset #include <unordered_set>
+    b. Unordered map/ multimap #include <unordered_map>
+4. Container Adapters
+    a. stack
+        * LIFO - push(), pop(), top()
+    b. queue
+        * FIFO - push(), pop(), front(), back()
+    c. priority queue : first item always have a greatest priority 
+        * push(), pop(), top()
+
+iterators
+----------
+#include <iterator>
+
+1. Random Access iterator - vector, deque, array
+2. Bidirectional iterator -  list, set/mutliset, map/multimap
+3. Forwared iterator - forward_list
+4. Input iterator - read and process value while iterating forward, we can print values but cannot input values
+    int x = *itr
+5. Output iterator - output values while iterating forward, we cannot print values but we can write a value to iterator
+    *itr = "Something You can write"
+
+/* some valuable points to remember */
+    // every container has iterator and const_iterator 
+        eg - vector<int>::iterator itr;
+        eg - vector<int>::const_iterator const_itr; // const iterator provides read only access to container element
+
+/* iterator functions */
+    // advance(itr,5) => moves five values ahead that is itr+=5;
+    // distance(itr1,itr2) => Measure the distance between itr1, itr2;
+
+/* Iterator Adapters */
+    1. insert iterator
+    2. stream iterator
+    3. reverse iterator
+    4. move iterator
+
+algorithms
+----------
+#include <algorithms>
+#include <numeric> //some numerical algorithms
+#include <functional> //to implement functors
+
+1. sort(iterator.begin(),iterator.end());
+2. list<int>::iterator pointer = find(dll.begin(),dll.end(),element);
