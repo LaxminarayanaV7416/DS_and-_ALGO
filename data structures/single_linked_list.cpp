@@ -86,8 +86,35 @@ void printLinkedList(){
     cout << endl;
 }
 
+void printLinkedListRecursion(Node* temp){
+    if(temp == NULL){
+        return;
+    }
+    cout << temp->data << " ";
+    printLinkedListRecursion(temp->next);
+}
+
+void printLinkedListRecursionReverse(Node* temp){
+    if(temp == NULL){
+        return;
+    }
+    printLinkedListRecursionReverse(temp->next);
+    cout << temp->data << " ";
+}
+
+void recursiveReverse(Node* temp){
+    if (temp->next == NULL){
+        head = temp;
+        return;
+    }
+    recursiveReverse(temp->next);
+    Node* temp2 = temp->next;
+    temp2->next = temp;
+    temp->next = NULL;
+}
+
 int main(){
-    Node* head = NULL;
+    head = NULL;
     int n,x;
     cout << "Enter how many numbers you want to insert in linked list " << endl;
     cin >> n;
@@ -95,27 +122,33 @@ int main(){
         cout << "Enter the number to insert at beginning of Linked List " << endl;
         cin >> x;
         append_front(x);
-        printLinkedList();
+        printLinkedListRecursion(head);
+        cout << endl;
     }
     cout << "Enter the number to insert in end Linked List " << endl;
     cin >> x;
     append_end(x);
-    printLinkedList();
+    printLinkedListRecursion(head);
+    cout << endl;
     cout << "insert at first position " << endl;
     cin >> x;
     insertAtPosition(x,1);
-    printLinkedList();
+    printLinkedListRecursion(head);
+    cout << endl;
     cout << "insert at any position " << endl;
     cin >> x;
     int pos;
     cout << "please the position to insert " << endl;
     cin >> pos;
     insertAtPosition(x,pos);
-    printLinkedList();
+    printLinkedListRecursion(head);
+    cout << endl;
 
-    deleteNode(3);
-    printLinkedList();
-
-    reverseLinkedListIteratorMethod();
-    printLinkedList();
+    // deleteNode(3);
+    printLinkedListRecursion(head);
+    cout << endl;
+    //printLinkedListRecursionReverse(head);
+    recursiveReverse(head);
+    printLinkedListRecursion(head);
+    cout << endl;
 }
