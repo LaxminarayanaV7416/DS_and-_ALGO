@@ -148,3 +148,41 @@ At Last
 3: Heavy light decomposition
 4: Convex Hull Alog
 5: FFT/NTT
+
+
+Free Resources and links
+----------------------------
+
+1. https://www.codechef.com/certification/data-structures-and-algorithms/prepare
+
+2. https://visualgo.net/en
+
+3. Search "dsa by narasimha karumanchi pdf" on google
+
+4. Search "cracking the coding interview pdf" on google
+
+5. https://www.geeksforgeeks.org/
+
+6. https://www.tutorialspoint.com/data_structures_algorithms/index.htm
+
+7. https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/
+
+8. https://www.youtube.com/playlist?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
+
+9. https://www.youtube.com/user/tusharroy2525/featured
+
+10. https://www.youtube.com/playlist?list=PLfBJlB6T2eOuDDm9xscqMZR3nnLP5FiyN
+
+11. https://www.youtube.com/c/akshaymarch7/
+
+12. https://www.coursera.org/specializations/data-structures-algorithms
+
+13. https://www.edx.org/course/foundations-of-data-structures
+
+14. https://www.udemy.com/course/data-structures-in-c/
+
+15. https://www.udemy.com/course/data-structures-part-1-lognacademy/
+
+16. https://www.udemy.com/course/data-structures-and-algorithms-deep-dive-using-java/
+
+17. https://www.udacity.com/course/intro-to-algorithms--cs215
